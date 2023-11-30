@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+>
+
+    <!-- 앱 재설치 시 SharedPreferences 초기화를 위해 allowBackup, fullBackupOnly, fullBackupContent 속성을 false로 설정했습니다. -->
+    <application
+        android:allowBackup="false"
+        android:fullBackupOnly="false"
+        android:fullBackupContent="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
+        android:theme="@style/Theme.MapPrj">
+        <activity
+            android:name=".IntroActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".PermissionActivity" />
+    </application>
+
+    <!-- 네트워크 접속 권한 -->
+    <uses-permission android:name="android.permission.INTERNET"/> <!--WEBVIEW ERR_CACHE_MISS ERROR 대응-->
+
+    <!--ACCESS_COARSE_LOCATION : 네트워크를 이용하여 단말기 위치 식별-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!--ACCESS_FINE_LOCATION : GPS와 네트워크를 이용하여 단말기 위치 식별-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+
+</manifest>
